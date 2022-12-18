@@ -31,3 +31,24 @@ Console.WriteLine("Количество четных чисел в массив�
 числами. Найдите сумму элементов, стоящих на нечётных позициях.
 */
 
+int[] GetArray(int size, int minV, int maxV)
+{
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(minV, maxV + 1);
+    }
+
+    return array;
+}
+
+int[] resultArray = GetArray(8, -99, 99);
+Console.WriteLine(String.Join("; ", resultArray));
+
+int sum = 0;
+
+for (int i = 1; i < resultArray.Length; i = i+2)
+{
+   sum = sum + resultArray[i];
+}
+Console.WriteLine("Сумма нечетных элементов в массиве: " + sum);
