@@ -64,7 +64,7 @@ double[] GetArray(int size)
     double[] array = new double[size];
     for (int i = 0; i < size; i++)
     {
-        array[i] = new Random().NextDouble();
+        array[i] = new Random().NextDouble()*10;
     }
 
     return array;
@@ -82,4 +82,4 @@ for (int i = 0; i < resultArray.Length; i++)
    if (resultArray[i] < minelement) minelement = resultArray[i]; 
 }
 Console.Write("Разница между максимальным и минимальным элементами масива: ");
-Console.WriteLine(maxelement-minelement);
+Console.WriteLine(string.Format("{0:F2}", maxelement-minelement));
