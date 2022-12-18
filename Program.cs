@@ -29,7 +29,7 @@ Console.WriteLine("Количество четных чисел в массив�
 /*
 Задача 36: Задайте одномерный массив, заполненный случайными
 числами. Найдите сумму элементов, стоящих на нечётных позициях.
-*/
+
 
 int[] GetArray(int size, int minV, int maxV)
 {
@@ -52,3 +52,34 @@ for (int i = 1; i < resultArray.Length; i = i+2)
    sum = sum + resultArray[i];
 }
 Console.WriteLine("Сумма нечетных элементов в массиве: " + sum);
+*/
+
+/*
+Задача 38: Задайте массив вещественных чисел. Найдите разницу
+между максимальным и минимальным элементов массива.
+*/
+
+double[] GetArray(int size)
+{
+    double[] array = new double[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().NextDouble();
+    }
+
+    return array;
+}
+
+double[] resultArray = GetArray(5);
+Console.WriteLine(String.Join("; ", resultArray));
+
+double minelement = resultArray[0];
+double maxelement = resultArray[1];
+
+for (int i = 0; i < resultArray.Length; i++)
+{
+   if (resultArray[i] > maxelement) maxelement = resultArray[i];
+   if (resultArray[i] < minelement) minelement = resultArray[i]; 
+}
+Console.Write("Разница между максимальным и минимальным элементами масива: ");
+Console.WriteLine(maxelement-minelement);
